@@ -7,7 +7,7 @@ const {username, room} = Qs.parse(location.search, {
     ignoreQueryPrefix: true
 })
 
-console.log(username, room)
+socket.emit('joinroom', { username, room})
 
 //message from server
 socket.on('msg', message => {
